@@ -3,7 +3,7 @@
 angular.module('app', []);
 
 angular.module('app').controller('mainCtrl', function($scope) {
-    $scope.user = {
+    $scope.user1 = {
         name: 'Luke Skywalker',
         address: {
             street: '1742 Stanford Ave',
@@ -25,10 +25,11 @@ angular.module('app').controller('mainCtrl', function($scope) {
 angular.module('app').directive('userInfoCard', function() {
     return {
         templateUrl: "scripts/partials/userInfoCard.html",
+        scope: { user: "=" }  ,
         controller: function($scope) {
             $scope.favorite = function(user) {
                 user.rank = "favorite";
-            }    
+            }
         }
     }
 } )
