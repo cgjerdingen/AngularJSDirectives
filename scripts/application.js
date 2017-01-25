@@ -18,6 +18,20 @@ angular.module('app').controller('mainCtrl', function($scope) {
     
     };
 
+    $scope.user2 = {
+        name: 'Han Solo',
+        address: {
+            street: '321 19th Ave S',
+            city: 'Mos Eisely',
+            planet: 'Tattoine',
+        },
+        friends: [
+            'Luke',
+            'Leia',
+            'Chewbacca',
+        ]
+    
+    };
     
 });
 
