@@ -16,11 +16,19 @@ angular.module('app').controller('mainCtrl', function($scope) {
             'Chewbacca',
         ]
     
-    }    
+    };
+
+    
 });
+
 
 angular.module('app').directive('userInfoCard', function() {
     return {
-        template: "<div>Name: {{ user.name }}</div><br /> <div ng-show='!!user.address'>Address:<br />{{ user.address.street }} <br />{{ user.address.city }} <br />{{ user.address.planet }}</div><br /><div>Friends: <div ng-repeat='friend in user.friends'>{{friend}}</div></div>"
+        templateUrl: "scripts/partials/userInfoCard.html",
+        controller: function($scope) {
+            $scope.favorite = function(user) {
+                user.rank = "favorite";
+            }    
+        }
     }
 } )
